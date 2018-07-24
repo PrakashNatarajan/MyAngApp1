@@ -1,3 +1,7 @@
+## NVM List
+`echo "8.11.3" > .nvmrc`
+`nvm use`
+
 # MyAngApp1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
@@ -25,3 +29,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Start JSON Server for RESTFull API.
+Run Json server by using following command open the url in browser.
+`json-server --watch db/db.json`
+json-server url
+`http://localhost:3000/heroes`
