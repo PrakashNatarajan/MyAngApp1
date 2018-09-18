@@ -1,0 +1,173 @@
+
+.colors {
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 30vh;
+  height: 80vw;
+  max-height: 60vh;
+  font-size: 1rem;
+  float: left;
+}
+
+
+.form {
+  display: none;
+  float: right;
+}
+
+
+.grid {
+  margin: 0 auto;
+  width: 80vw;
+  max-width: 90vh;
+  height: 80vw;
+  max-height: 60vh;
+  font-size: 1rem;
+  float: center;
+}
+
+
+.row {
+  display: flex;
+}
+
+
+.box {
+  margin: 5px;
+  color: white;
+  font-weight: bold;
+  flex: 1 0 auto;
+  position: relative;
+}
+
+.box:after {
+  content: "";
+  float: left;
+  display: block;
+  padding-top: 100%;
+}
+
+.box .inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box .tooltiptext {
+  visibility: hidden;
+  width: 90px;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  margin-left: 20px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.box:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+
+/* line 1, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /home/prakash/LearnWork/WorkSpace/RubyProjects/GraphicDesigner/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
