@@ -9,7 +9,7 @@ import { ShapeService } from './shape.service';
   styleUrls: ['./shape.component.css']
 })
 export class ShapeComponent implements OnInit {
-  shapes: Shape[];
+  multiShapes: Shape[][];
 
   constructor(private shapeService: ShapeService) { }
 
@@ -19,7 +19,7 @@ export class ShapeComponent implements OnInit {
 
   getShapes(): void {
     this.shapeService.getShapes()
-    .subscribe(shapes => this.shapes = shapes);
+    .subscribe(multiShapes => this.multiShapes = multiShapes);
   }
 
 }

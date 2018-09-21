@@ -20,10 +20,10 @@ export class ShapeService {
   ) { }
 
   /** GET shapes from the server */
-  getShapes (): Observable<Shape[]> {
-    return this.http.get<Shape[]>(this.shapesUrl)
+  getShapes (): Observable<Shape[][]> {
+    return this.http.get<Shape[][]>(this.shapesUrl)
       .pipe(
-        tap(shapes => this.log('fetched shapes')),
+        tap(multiShapes => this.log('fetched shapes successfully')),
         catchError(this.handleError('getShapes', []))
       );
   }
@@ -51,7 +51,7 @@ export class ShapeService {
 
   /** Log a shapeService message with the ShapeService */
   private log(message: string) {
-    //this.messageService.add(`articleService: ${message}`);
+    //this.messageService.add(`shapeService: ${message}`);
     console.log(message)
   }  
 
