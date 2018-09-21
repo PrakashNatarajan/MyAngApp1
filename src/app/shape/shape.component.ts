@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Shape, Color } from './shape';
 import { ShapeService } from './shape.service';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-shape',

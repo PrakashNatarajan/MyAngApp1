@@ -1,7 +1,7 @@
 <h1>Graphics</h1>
 <div class="container">
   
-  <div class="colors" id="colorsData">
+  <div class="colors" id="colorcodes">
     <div class="row" *ngFor="let colors of multiColors">
         <div class="box" *ngFor="let color of colors" id="{{color.id}}" style.background-color="{{color.code}}">
           <div class="inner"></div>
@@ -20,29 +20,21 @@
   </div>
 
 
-
-<div class="form">
-  <form id="graphic-form" action="/graphics" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uv329kkWM4p35oh8L1n9Pfi8IPW6gDq7prpAW+yZk+CqcO7iFxOxApPc9h39gNLJkIJX3YRUU6AVxPRCI56/8Q==" />
-
-  <div class="field">
-    <label for="graphic_shape_id">Shape</label>
-    <input type="number" name="graphic[shape_id]" id="graphic_shape_id" />
-  </div>
-
-  <div class="field">
-    <label for="graphic_user_id">User</label>
-    <input value="12" type="number" name="graphic[user_id]" id="graphic_user_id" />
-  </div>
-
-  <div class="field">
-    <label for="graphic_color_id">Color</label>
-    <input type="number" name="graphic[color_id]" id="graphic_color_id" />
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Graphic" data-disable-with="Create Graphic" />
-  </div>
-</form>
-</div>
-
+  <div class="form">
+    <div class="field">
+      <input type="hidden" name="username" id="userid" value="7" />
+      <input type="hidden" name="colorname" id="colorcode" value="" />
     </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#colorcodes .row .box').click(function() {
+        color_id = $(this).attr('id');
+        alert(color_id);
+        $('#colorcode').val(color_id);
+      });
+    });
+  </script>
+  
+</div>

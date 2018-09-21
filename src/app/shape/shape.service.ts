@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ShapeService {
 
-  private shpGrpUrl = 'http://localhost:12345';  // URL to web api
+  private shpGrpUrl = 'http://localhost:3000';  // URL to web api
 
   constructor(
     private http: HttpClient,
