@@ -6,78 +6,17 @@
 
 <h1>Graphics</h1>
 
-<div class="colors">
-    <div class="row">
-        <div class="box" color-id="8" style="background-color:#000000">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="5" style="background-color:#0000FF">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="12" style="background-color:#A52A2A">
-          <div class="inner"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box" color-id="3" style="background-color:#00FFFF">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="7" style="background-color:#0000A0">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="17" style="background-color:#008000">
-          <div class="inner"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box" color-id="6" style="background-color:#808080">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="9" style="background-color:#ADD8E6">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="15" style="background-color:#00FF00">
-          <div class="inner"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box" color-id="16" style="background-color:#FF00FF">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="14" style="background-color:#800000">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="18" style="background-color:#808000">
-          <div class="inner"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box" color-id="10" style="background-color:#FFA500">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="11" style="background-color:#800080">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="1" style="background-color:#FF0000">
-          <div class="inner"></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box" color-id="4" style="background-color:#C0C0C0">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="2" style="background-color:#FFFFFF">
-          <div class="inner"></div>
-        </div>
-        <div class="box" color-id="13" style="background-color:#FFFF00">
+<div class="colors" id="colorsData">
+    <div class="row" *ngFor="let colors of multiColors">
+        <div class="box" *ngFor="let color of colors" id="{{color.id}}" style.background-color="{{color.code}}">
           <div class="inner"></div>
         </div>
     </div>
 </div>
 
-<div class="grid">
+<div class="grid" id="shapesData">
     <div class="row" *ngFor="let shapes of multiShapes">
-        <div class="box" *ngFor="let shape of shapes" id="shape-id-{{shape.shape_id}}" style.background-color="{{shape.color_code}}">
+        <div class="box" *ngFor="let shape of shapes" id="{{shape.shape_id}}" style.background-color="{{shape.color_code}}">
             <div class="tooltiptext" *ngIf="shape.user_name != ' '">
               {{shape.user_name}} at {{shape.last_updated_at}}
             </div>

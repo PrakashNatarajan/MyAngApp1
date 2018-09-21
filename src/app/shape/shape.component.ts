@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Shape } from './shape';
+import { Shape, Color } from './shape';
 import { ShapeService } from './shape.service';
 
 @Component({
@@ -10,16 +10,23 @@ import { ShapeService } from './shape.service';
 })
 export class ShapeComponent implements OnInit {
   multiShapes: Shape[][];
+  multiColors: Color[][];
 
   constructor(private shapeService: ShapeService) { }
 
   ngOnInit() {
     this.getShapes();
+    this.getColors();
   }
 
   getShapes(): void {
     this.shapeService.getShapes()
     .subscribe(multiShapes => this.multiShapes = multiShapes);
+  }
+
+  getColors(): void {
+    this.shapeService.getColors()
+    .subscribe(multiColors => this.multiColors = multiColors);
   }
 
 }

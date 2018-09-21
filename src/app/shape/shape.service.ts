@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Shape } from './shape';
+import { Shape, Color } from './shape';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class ShapeService {
 
-  private shapesUrl = 'http://localhost:12345/shapes';  // URL to web api
+  private shpGrpUrl = 'http://localhost:12345';  // URL to web api
 
   constructor(
     private http: HttpClient,
@@ -21,13 +21,21 @@ export class ShapeService {
 
   /** GET shapes from the server */
   getShapes (): Observable<Shape[][]> {
-    return this.http.get<Shape[][]>(this.shapesUrl)
+    return this.http.get<Shape[][]>(this.shpGrpUrl + '/shapes')
       .pipe(
         tap(multiShapes => this.log('fetched shapes successfully')),
         catchError(this.handleError('getShapes', []))
       );
   }
 
+  /** GET colors from the server */
+  getColors (): Observable<Color[][]> {
+    return this.http.get<Color[][]>(this.shpGrpUrl + '/colors')
+      .pipe(
+        tap(multiShapes => this.log('fetched colors successfully')),
+        catchError(this.handleError('getColors', []))
+      );
+  }
   
   /**
    * Handle Http operation that failed.
