@@ -37,6 +37,16 @@ export class ShapeService {
       );
   }
   
+  /** PUT: update the shape on the server */
+  updateShape (shape: Shape): Observable<any> {
+    const id = shape.shape_id;
+    const url = `${this.shpGrpUrl + '/shapes'}/${id}`;
+    return this.http.put(url, shape, httpOptions).pipe(
+      tap(_ => this.log(`updated shape id=${id}`)),
+      catchError(this.handleError<any>('updateShape'))
+    );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

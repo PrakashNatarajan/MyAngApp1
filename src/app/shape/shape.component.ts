@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { Shape, Color } from './shape';
 import { ShapeService } from './shape.service';
 
-//
+/*
 //Disabling the Jquery
-// Uncomment at "scripts": [] in angular.json to Enable
-//declare var jquery:any;
-//declare var $ :any;
-//
+//Uncomment at "scripts": [] in angular.json to Enable
+declare var jquery:any;
+declare var $ :any;
+*/
 
 @Component({
   selector: 'app-shape',
