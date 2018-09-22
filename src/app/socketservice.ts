@@ -32,9 +32,9 @@ export class SocketService {
     console.log("WebSocket Response");
     this.eventRes = JSON.parse(event.data);
     console.log(JSON.parse(event.data));
-    this.grpShape = document.getElementById(this.eventRes.shape_id)
+    this.grpShape = document.getElementById("sp" + String(this.eventRes.shape_id))
     console.log(this.grpShape);
-    this.grpShape.style.background-color = this.eventRes.clrcode
+    this.grpShape.style.backgroundColor = (this.eventRes.clrcode);
   }
 
   //An event listener to be called when an error occurs. This is a simple event named "error".

@@ -3,7 +3,7 @@
   
   <div class="colors" id="colorcodes">
     <div class="row" *ngFor="let colors of multiColors">
-        <div class="box" *ngFor="let color of colors" id="{{color.id}}" style.background-color="{{color.code}}">
+        <div class="box" *ngFor="let color of colors" id="clr{{color.id}}" style.background-color="{{color.code}}">
           <div class="inner" (click)="selectColor(color)"></div>
         </div>
     </div>
@@ -11,7 +11,7 @@
 
   <div class="grid" id="shapesData">
     <div class="row" *ngFor="let shapes of multiShapes">
-        <div class="box" *ngFor="let shape of shapes" id="{{shape.shape_id}}" style.background-color="{{shape.color_code}}">
+        <div class="box" *ngFor="let shape of shapes" id="sp{{shape.shape_id}}" style.background-color="{{shape.color_code}}">
             <div class="inner" (click)="changeColor(shape)"></div>
             <div class="tooltiptext" *ngIf="shape.user_name != ' '">
               {{shape.user_name}} at {{shape.last_updated_at}}
