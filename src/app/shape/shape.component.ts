@@ -50,7 +50,9 @@ export class ShapeComponent implements OnInit {
 
   changeColor(shape: Shape): void {
     console.log(localStorage.getItem("sessionUsrId"))
-    this.socketService.sendGraphicsDetails(this.sessionUsrId, shape.shape_id, this.selectedClrId);
+    if (this.selectedClrId != null) {
+      this.socketService.sendGraphicsDetails(this.sessionUsrId, shape.shape_id, this.selectedClrId);
+    }
   }
 
 }
