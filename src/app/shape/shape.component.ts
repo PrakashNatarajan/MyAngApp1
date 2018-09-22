@@ -28,6 +28,8 @@ export class ShapeComponent implements OnInit {
     this.getShapes();
     this.getColors();
     this.sessionUsrId = 5;
+    localStorage.setItem("sessionUsrId", String(this.sessionUsrId));
+    //localStorage.getItem("sessionUsrId");
     this.socketService.connectWebSocket(this.sessionUsrId);
   }
 
@@ -47,6 +49,7 @@ export class ShapeComponent implements OnInit {
   }
 
   changeColor(shape: Shape): void {
+    console.log(localStorage.getItem("sessionUsrId"))
     this.socketService.sendGraphicsDetails(this.sessionUsrId, shape.shape_id, this.selectedClrId);
   }
 

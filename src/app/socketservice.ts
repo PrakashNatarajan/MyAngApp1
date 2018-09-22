@@ -7,6 +7,8 @@ import { Injectable } from '@angular/core';
 })
 export class SocketService {
   socket: any = null;
+  eventRes: any = null;
+  grpShape: any = null;
 
   private socketUrl = "ws://localhost:12345/chat?userid=";  // URL to web api
   
@@ -28,7 +30,11 @@ export class SocketService {
   //An event listener to be called when a message is received from the server
   onMessage(event: any): void {
     console.log("WebSocket Response");
+    this.eventRes = JSON.parse(event.data);
     console.log(JSON.parse(event.data));
+    this.grpShape = document.getElementById(this.eventRes.shape_id)
+    console.log(this.grpShape);
+    this.grpShape.style.background-color = this.eventRes.clrcode
   }
 
   //An event listener to be called when an error occurs. This is a simple event named "error".
@@ -45,6 +51,7 @@ export class SocketService {
 
   //Send Graphics details
   sendGraphicsDetails(userId: number, shapeId: number, colorId: number): void {
+    //console.log(localStorage.getItem("sessionUsrId")); // Local storage is working fine.
     console.log({user_id: userId, shape_id: shapeId, color_id: colorId});
     this.socket.send(JSON.stringify({user_id: userId, shape_id: shapeId, color_id: colorId}));
   }
