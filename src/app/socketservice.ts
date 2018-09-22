@@ -35,6 +35,7 @@ export class SocketService {
     this.grpShape = document.getElementById("sp" + String(this.eventRes.shape_id))
     console.log(this.grpShape);
     this.grpShape.style.backgroundColor = (this.eventRes.clrcode);
+    //this.grpShape.innerHTML = ("<div class='tooltiptext'>" + this.eventRes.usrname + " at " + this.eventRes.last_updated_at + "</div>");
   }
 
   //An event listener to be called when an error occurs. This is a simple event named "error".
