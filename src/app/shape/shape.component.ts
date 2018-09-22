@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Shape, Color } from './shape';
 import { ShapeService } from './shape.service';
+import { SocketService } from '../socketservice';
 
 /*
 //Disabling the Jquery
@@ -21,11 +22,12 @@ export class ShapeComponent implements OnInit {
   sessionUsrId: 1;
   selectedClrId: number;
 
-  constructor(private shapeService: ShapeService) { }
+  constructor(private shapeService: ShapeService, private socketService: SocketService) { }
 
   ngOnInit() {
     this.getShapes();
     this.getColors();
+    this.socketService.connectWebSocket();
   }
 
   getShapes(): void {
