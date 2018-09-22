@@ -19,7 +19,7 @@ declare var $ :any;
 export class ShapeComponent implements OnInit {
   multiShapes: Shape[][];
   multiColors: Color[][];
-  sessionUsrId: 1;
+  sessionUsrId: number;
   selectedClrId: number;
 
   constructor(private shapeService: ShapeService, private socketService: SocketService) { }
@@ -27,7 +27,8 @@ export class ShapeComponent implements OnInit {
   ngOnInit() {
     this.getShapes();
     this.getColors();
-    this.socketService.connectWebSocket();
+    this.sessionUsrId = 5;
+    this.socketService.connectWebSocket(this.sessionUsrId);
   }
 
   getShapes(): void {
@@ -41,18 +42,12 @@ export class ShapeComponent implements OnInit {
   }
 
   selectColor(color: Color): void {
-    console.log("Before selectedClrId")
-    console.log(this.selectedClrId)
     this.selectedClrId = color.id
-    console.log("After selectedClrId")
-    console.log(this.selectedClrId)
+    //console.log(this.selectedClrId)
   }
 
   changeColor(shape: Shape): void {
-    console.log("selectedClrId")
-    console.log(this.selectedClrId)
-    console.log("After shapeId")
-    console.log(shape.shape_id)  
+    this.socketService.sendGraphicsDetails(this.sessionUsrId, shape.shape_id, this.selectedClrId);
   }
 
 }
